@@ -109,7 +109,7 @@ class TableCalendar extends StatefulWidget {
   final AvailableGestures availableGestures;
 
   /// Configuration for vertical Swipe detector.
-  final SimpleSwipeConfig simpleSwipeConfig;
+  //final SimpleSwipeConfig simpleSwipeConfig;
 
   /// Style for `TableCalendar`'s content.
   final CalendarStyle calendarStyle;
@@ -147,10 +147,10 @@ class TableCalendar extends StatefulWidget {
     this.startingDayOfWeek = StartingDayOfWeek.sunday,
     this.dayHitTestBehavior = HitTestBehavior.deferToChild,
     this.availableGestures = AvailableGestures.all,
-    this.simpleSwipeConfig = const SimpleSwipeConfig(
-      verticalThreshold: 25.0,
-      swipeDetectionBehavior: SwipeDetectionBehavior.continuousDistinct,
-    ),
+    //this.simpleSwipeConfig = const SimpleSwipeConfig(
+    //  verticalThreshold: 25.0,
+    //  swipeDetectionBehavior: SwipeDetectionBehavior.continuousDistinct,
+    //),
     this.calendarStyle = const CalendarStyle(),
     this.daysOfWeekStyle = const DaysOfWeekStyle(),
     this.headerStyle = const HeaderStyle(),
@@ -355,14 +355,22 @@ class _TableCalendarState extends State<TableCalendar> with SingleTickerProvider
 
     switch (widget.availableGestures) {
       case AvailableGestures.all:
-        wrappedChild = _buildVerticalSwipeWrapper(
+        /*wrappedChild = _buildVerticalSwipeWrapper(
           child: _buildHorizontalSwipeWrapper(
             child: wrappedChild,
           ),
         );
+        break;*/
+        wrappedChild = _buildHorizontalSwipeWrapper(
+          child: wrappedChild,
+        );
         break;
       case AvailableGestures.verticalSwipe:
-        wrappedChild = _buildVerticalSwipeWrapper(
+        /*wrappedChild = _buildVerticalSwipeWrapper(
+          child: wrappedChild,
+        );
+        break;*/
+        wrappedChild = _buildHorizontalSwipeWrapper(
           child: wrappedChild,
         );
         break;
@@ -382,7 +390,7 @@ class _TableCalendarState extends State<TableCalendar> with SingleTickerProvider
     );
   }
 
-  Widget _buildVerticalSwipeWrapper({Widget child}) {
+  /*Widget _buildVerticalSwipeWrapper({Widget child}) {
     return SimpleGestureDetector(
       child: child,
       onVerticalSwipe: (direction) {
@@ -392,7 +400,7 @@ class _TableCalendarState extends State<TableCalendar> with SingleTickerProvider
       },
       swipeConfig: widget.simpleSwipeConfig,
     );
-  }
+  }*/
 
   Widget _buildHorizontalSwipeWrapper({Widget child}) {
     return AnimatedSwitcher(

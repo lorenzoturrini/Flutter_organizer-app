@@ -1,9 +1,9 @@
 
-import 'package:flutter/material.dart';
-//import 'package:flutter_web/material.dart';
-import 'dart:async';
+//import 'package:flutter/material.dart';
+import 'package:flutter_web/material.dart';
+//import 'dart:async';
 import 'package:intl/intl.dart';
-import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
+//import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'models/event_model.dart';
 
 class EventData {
@@ -92,26 +92,7 @@ class EventCreatorState extends State<EventCreator> {
             children: <Widget>[
               titleWidget,
               SizedBox(height: 16.0),
-              new DateTimePickerFormField(
-                initialDate: widget._event.time,
-                initialValue: widget._event.time,
-                inputType: InputType.both,
-                format: dateFormat,
-                keyboardType: TextInputType.datetime,
-                style: TextStyle(fontSize: 20.0, color: Colors.black),
-                editable: true,
-                decoration: InputDecoration(
-                    labelText: 'Event Date',
-                    hintText: 'August 1, 2019 at 1:00PM',
-                    contentPadding: EdgeInsets.all(20.0),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8.0)
-                    )
-                ),
-                autovalidate: false,
-                validator: this._validateDate,
-                onSaved: (DateTime value) => this._eventData.time = value,
-              ),
+
               SizedBox(height: 16.0),
               notesWidget,
             ],

@@ -1,8 +1,8 @@
 //  Copyright (c) 2019 Aleksander Woźniak
 //  Licensed under Apache License v2.0
 
-import 'package:flutter/material.dart';
-//import 'package:flutter_web/material.dart';
+//import 'package:flutter/material.dart';
+import 'package:flutter_web/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 import 'table_calendar/table_calendar.dart';
@@ -150,7 +150,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     );
   }
 
-  // More advanced TableCalendar configuration (using Builders & Styles)
+  /* More advanced TableCalendar configuration (using Builders & Styles)
   Widget _buildTableCalendarWithBuilders() {
     return TableCalendar(
       locale: 'pl_PL',
@@ -240,7 +240,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       onVisibleDaysChanged: _onVisibleDaysChanged,
     );
   }
-
+*/
   Widget _buildEventsMarker(DateTime date, List events) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),

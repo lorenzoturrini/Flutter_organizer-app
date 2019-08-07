@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-//import 'package:flutter_web/material.dart';
+//import 'package:flutter/material.dart';
+import 'package:flutter_web/material.dart';
 import 'global_contants.dart';
 
 class LoginData {
@@ -166,7 +166,7 @@ class _SignInPageState extends State<SignInPage> {
       ),
     );
 
-    final loginImage = new Image.asset('assets/logo.png',
+    final loginImage = new Image.asset('logo.png',
       height: 128.0,
     );
 
