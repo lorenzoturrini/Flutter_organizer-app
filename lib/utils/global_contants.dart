@@ -14,8 +14,6 @@ class Constants {
     DateTime(2019, 4, 22): [new Event("Easter Monday", "", DateTime(2019, 4, 22),DateTime(2019, 4, 22),"","")]
   };
 
-
-
   //Event related
   //TODO sarebbe bello averle su database queste categorie
   Map<String,int> category = {
@@ -34,5 +32,4 @@ class Constants {
   static const String resetCodeRoute = '/reset_code_page';
   static const  String logInRoute = '/log_in_page';
   static bool debug = false;
-
 }

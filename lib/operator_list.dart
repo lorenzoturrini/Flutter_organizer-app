@@ -239,7 +239,6 @@ class _OperatorListState extends State<OperatorList>{
     );
   }
 
-
   String _validateFilter(DateTime value) {
     if (value == null) {
       return 'Please enter a valid period';
@@ -259,10 +258,6 @@ class _OperatorListState extends State<OperatorList>{
       Navigator.maybePop(context);
     }
   }
-
-
-
-
 }
 
 //TODO stile del ChildItem

@@ -27,7 +27,6 @@ import 'backdrop.dart';
 import 'log_in_view.dart';
 import 'event_view.dart';
 
-
 //HANDLE cambia questa velocità
 const double _kFlingVelocity = 2.0;
 
@@ -123,7 +122,7 @@ class _BackdropState extends State<Backdrop>
     );
   }
 
-        //--BUILDER DELL' OVERLAP DEI DUE LAYER
+      //--BUILDER DELL' OVERLAP DEI DUE LAYER
   Widget _buildStack(BuildContext context, BoxConstraints constraints) {
     const double layerTitleHeight = 48.0; //HANDLE
     final Size layerSize = constraints.biggest;
@@ -285,10 +284,6 @@ class _CustomTitle extends AnimatedWidget {
   }
 }
 /////////////////////////////////////////////////////////////////
-
-
-
-
 /// Builds a BackLayer.
 ///
 /// The backlayer contains the menu with all the choices of the user
@@ -371,10 +366,6 @@ class _BackLayer extends StatelessWidget {
   }
 }
 
-
-
-
-
 /// Builds a FrontLayer.
 ///
 /// The frontlayer contains the page associated with the selected route.
@@ -422,7 +413,6 @@ class _FrontLayer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-
       children: <Widget>[
         router(),
         Visibility(
@@ -441,5 +431,3 @@ class _FrontLayer extends StatelessWidget {
     );
   }
 }
-
-

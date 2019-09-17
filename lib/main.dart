@@ -4,7 +4,6 @@
 import 'package:flutter/material.dart';
 //import 'package:flutter_web/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
-
 import 'utils/theme.dart';
 import 'event_creator.dart';
 import 'daily_calendar_view.dart';
@@ -33,11 +32,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Table Calendar Demo',
+      debugShowCheckedModeBanner: false,
       theme: customLightTheme,
-      home: Backdrop(//<--DEBUG MODE vista corrente da cambiare con pagina di login
-        frontLayerRoute: _currentView,
-        backLayerRouteChanger: _onCategoryTap,
-      ),
+      home: LogInPage(),
       routes: {
         //ROUTES COMMENTATE DELEGATE ALLA BACKDROP(AL FRONTLAYER DELLA BACKDROP)
         //'/calendar': (context) => DailyCalendar(title: "Home Calendar"),
@@ -45,7 +42,7 @@ class _MyAppState extends State<MyApp> {
         //'/event_creator': (context) => EventCreator(null),
         '/reset_code_page': (context) => ResetCodePage("1235"),
         //'/profile': (context) => ProfilePage(),
-        '/log_in_page': (context) => LogInPage(),
+        //'/log_in_page': (context) => LogInPage(),
       },
       onUnknownRoute: _getRoute,
     );
@@ -77,5 +74,3 @@ class _MyAppState extends State<MyApp> {
     });
   }
 }
-
-

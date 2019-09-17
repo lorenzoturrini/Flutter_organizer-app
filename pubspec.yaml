@@ -28,6 +28,13 @@ dependencies:
   date_utils: ^0.1.0+2
   queries: ^0.1.12
   bubble_tab_indicator: ^0.1.4
+  cloud_firestore: ^0.12.9     # new
+  google_sign_in: ^4.0.0
+  firebase_core: ^0.4.0+8
+  firebase_dynamic_links: ^0.3.0
+  uuid: ^2.0.2
+  firebase_auth: ^0.14.0
+  flutter_launcher_icons: ^0.7.2+1
 dev_dependencies:
   #-mobile-
   flutter_test:
