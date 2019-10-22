@@ -121,7 +121,7 @@ class TableCalendar extends StatefulWidget {
   final AvailableGestures availableGestures;
 
   /// Configuration for vertical Swipe detector.
-  final SimpleSwipeConfig simpleSwipeConfig;
+  final dynamic simpleSwipeConfig;
 
   /// Style for `TableCalendar`'s content.
   final CalendarStyle calendarStyle;
@@ -161,10 +161,7 @@ class TableCalendar extends StatefulWidget {
     this.startingDayOfWeek = StartingDayOfWeek.sunday,
     this.dayHitTestBehavior = HitTestBehavior.deferToChild,
     this.availableGestures = AvailableGestures.all,
-    this.simpleSwipeConfig = const SimpleSwipeConfig(
-      verticalThreshold: 25.0,
-      swipeDetectionBehavior: SwipeDetectionBehavior.continuousDistinct,
-    ),
+    this.simpleSwipeConfig = PlatformUtils.simpleSwipeConfig,
     this.calendarStyle = const CalendarStyle(),
     this.daysOfWeekStyle = const DaysOfWeekStyle(),
     this.headerStyle = const HeaderStyle(),
@@ -297,7 +294,7 @@ class _TableCalendarState extends State<TableCalendar> with SingleTickerProvider
     final children = [
       _CustomIconButton(
         icon: widget.headerStyle.leftChevronIcon,
-        onTap: (widget.selectPrevious is Function)?_selectToDay:null,
+        onTap: (widget.selectPrevious is Function)?_selectToDay:_selectPrevious,
         margin: widget.headerStyle.leftChevronMargin,
         padding: widget.headerStyle.leftChevronPadding,
       ),
@@ -404,14 +401,14 @@ class _TableCalendarState extends State<TableCalendar> with SingleTickerProvider
   }
 
   Widget _buildVerticalSwipeWrapper({Widget child}) {
-    return SimpleGestureDetector(
+    return PlatformUtils.gestureDetector(
       child: child,
-      onVerticalSwipe: (direction) {
-        setState(() {
-          widget.calendarController.swipeCalendarFormat(isSwipeUp: direction == SwipeDirection.up);
-        });
-      },
-      swipeConfig: widget.simpleSwipeConfig,
+        onVerticalSwipe: (direction) {
+          setState(() {
+            widget.calendarController.swipeCalendarFormat(isSwipeUp: direction == PlatformUtils.Dir);
+          });
+        },
+        swipeConfig: widget.simpleSwipeConfig,
     );
   }
 
